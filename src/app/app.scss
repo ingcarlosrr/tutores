@@ -1,0 +1,126 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.text-center {
+    text-align: center;
+}
+
+.bg-light {
+    background: #f5f5f5;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.portal {
+    text-align: center;
+    padding: 10px;
+    h1,h2,h3,h4,h5,h6 { font-weight: bold !important; }
+    p { color: rgba($color: #000000, $alpha: 0.7); };
+    img { width: 80px; }
+}
+.text-bold {
+    font-weight: bold !important;
+}
+
+.m-auto {
+    margin: auto !important;
+}
+
+@for $i from 1 through 50 {
+    .fs-#{$i} {
+        font-size: 1px * $i !important;
+    }
+
+    .ml-#{$i} {
+       margin-left: 1px * $i !important;
+    }
+
+    .mr-#{$i} {
+       margin-right: 1px * $i !important;
+    }
+
+    .mb-#{$i} {
+       margin-bottom: 1px * $i !important;
+    }
+
+    .mv-#{$i} {
+       margin-top: 1px * $i !important;
+       margin-bottom: 1px * $i !important;
+    }
+
+    .mh-#{$i} {
+       margin-left: 1px * $i !important;
+       margin-right: 1px * $i !important;
+    }
+
+    .padding-#{$i} {
+       padding: 1px * $i !important;
+    }
+
+    .pl-#{$i} {
+        padding-left: 1px * $i !important;
+    }
+
+    .pr-#{$i} {
+        padding-right: 1px * $i !important;
+    }
+
+    .pt-#{$i} {
+        padding-top: 1px * $i !important;
+    }
+
+    .ph-#{$i} {
+        padding-left: 1px * $i !important;
+        padding-right: 1px * $i !important;
+    }
+}
+
+ion-avatar.custom-avatar {
+    &.no-margin { margin: 0px !important; }
+    img {
+        width: 70px !important;
+        height: 70px !important;
+    }
+}
+
+ion-thumbnail.custom-thumbnail {
+    &.no-margin { margin: 0px !important; }
+    img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+}
+
+.no-margin {
+    margin: 0px !important;
+    .label {
+        margin: 0px !important;
+    }
+}
+
+ion-badge.custom-badge {
+    width: 100% !important;
+    padding: 6px !important;
+    border-radius: 10px !important;
+    background: #13295ae0 !important;
+}

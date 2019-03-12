@@ -1,0 +1,143 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <span class="fs-18">Datos estudiante</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content no-padding class="bg-light">
+  <ion-list no-lines>
+    <ion-item color="mediumLight">
+      <ion-avatar class="custom-avatar" item-start>
+        <img src="./assets/icons/perfil.png" alt="perfil">
+      </ion-avatar>
+      <h2 class="text-bold">Nombre del estudiante</h2>
+      <p>ID estudiantil:</p>
+      <p>Aula:</p>
+      <h3 class="text-bold">Estatus:</h3>
+    </ion-item>
+
+    <ion-item text-wrap>
+      <div class="text-center">
+        <h2 class="text-bold">Nombre centro educativo</h2>
+        <h3>Año escolar 2018-2019</h3>
+      </div>
+      <h3 class="text-bold mv-10">Profesores asignados</h3>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4 *ngFor="let profesor of profesoresAsignados" class="text-center">
+            <img [src]="profesor.foto" alt="profesor" width="33">
+            <p class="fs-8 text-bold">{{ profesor.nombre }}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
+  <ion-list no-lines>
+    <ion-item>
+      <img src="./assets/icons/detalleestudiantes.png" alt="estudiantes" class="m-auto mv-15 mh-5" width="48" item-start>
+      <p>Total estudiantes del aula: 41</p>
+    </ion-item>
+    <ion-item color="mediumLight" text-center>
+      <h2 class="text-bold">Asistencia escolar</h2>
+    </ion-item>
+    <ion-list-header class="no-margin ph-10">
+      <ion-badge class="custom-badge">ASISTENCIA DEL ESTUDIANTE</ion-badge>
+    </ion-list-header>
+    <ion-item class="fs-14">
+      <b item-start>Asistencia</b>
+      <p item-end>24</p>
+    </ion-item>
+    <ion-item class="fs-14">
+      <b item-start>Ausencia</b>
+      <p item-end>2</p>
+    </ion-item>
+    <ion-item class="fs-14">
+      <b item-start>Licencia medica</b>
+      <p item-end>1</p>
+    </ion-item>
+    <ion-item class="fs-14">
+      <b item-start>Otras ausencia</b>
+      <p item-end>0</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list no-lines>
+    <ion-list-header text-wrap class="no-margin">
+      <div class="portal">
+        <img src="./assets/icons/agendatareas.png" alt="agenda">
+        <h3>Agenda</h3>
+        <p>Verifique las tareas asignadas y el desempeño diario de sus hijos.</p>
+        <button ion-button class="padding-15">Ir a agenda</button>
+      </div>
+    </ion-list-header>
+    <ion-item color="mediumLight" text-center>
+      <h2 class="text-bold">Promedio de materias</h2>
+    </ion-item>
+
+    <ion-list-header class="ph-10" no-margin>
+      <ion-badge class="custom-badge">
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-6 no-padding>MATERIAS</ion-col>
+            <ion-col col-6 no-padding>PROMEDIO</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-badge>
+    </ion-list-header>
+    <ion-item class="fs-12">
+      <ion-grid no-padding>
+        <ion-row *ngFor="let materia of materias" class="mv-5">
+          <ion-col col-6 no-padding>{{ materia.materia }}</ion-col>
+          <ion-col col-6 no-padding class="text-center">{{ materia.promedio }}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item color="mediumLight" text-center>
+      <h2 class="text-bold">Calificaciones</h2>
+    </ion-item>
+    <ion-item>
+      <ion-label>Filtrar por:</ion-label>
+      <ion-select>
+        <ion-option value="" selected>Seleccionar</ion-option>
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-list-header class="ph-10" no-margin>
+      <ion-badge class="custom-badge">
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-4 no-padding>TIPO</ion-col>
+            <ion-col col-4 no-padding>MATERIAS</ion-col>
+            <ion-col col-4 no-padding>CALIFICACION</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-badge>
+    </ion-list-header>
+    <ion-item class="fs-12">
+      <ion-grid no-padding>
+        <ion-row *ngFor="let calificacion of calificaciones" class="mv-5">
+          <ion-col col-4 no-padding>{{ calificacion.tipo }}</ion-col>
+          <ion-col col-4 no-padding class="text-center">{{ calificacion.materia }}</ion-col>
+          <ion-col col-4 no-padding class="text-center">{{ calificacion.promedio }}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item color="mediumLight" text-center>
+      <h2 class="text-bold">Comentarios del profesor</h2>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-avatar item-start>
+        <img src="./assets/icons/perfil.png" alt="perfil" style="width: 50px; height: 50px">
+      </ion-avatar>
+      <small>Nombre del profesor - 10 Jul. 2018</small>
+      <p>El niño no presenta interés en la clase. En el aula se la pasa conversando con los compañeros, y no muestra sentido de respeto hacia la docencia.</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

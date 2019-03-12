@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="text-center">
+      <span class="fs-14">TUTOR EN LINEA</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding class="bg-light">
+  <ion-list no-lines>
+    <ion-list-header color="mediumLight" text-wrap>
+      <img src="./assets/icons/estudiantes.png" alt="estudiante" class="float-left" width="30">
+      <div class="float-right">
+        <img src="./assets/icons/notificacion desactivada.png" alt="notificacion" class="float-left" width="18">
+        <img src="./assets/icons/settings.png" alt="ajustes" width="20" class="ml-10">
+      </div>
+      <div class="portal">
+        <img src="./assets/icons/padretutor.png" alt="padre o tutor" class="ml-20">
+        <h3>Bienvenido padre o tutor!</h3>
+        <p>Aquí podrá dar seguimiento a la escolaridad de sus hijos.</p>
+      </div>
+    </ion-list-header>
+    <ion-item class="ph-20" text-center>
+        <ion-avatar item-start class="custom-avatar no-margin">
+          <img src="./assets/icons/perfil.png" alt="perfil">
+        </ion-avatar>
+        <h2 class="text-bold">Perfil del padre o tutor</h2>
+        <h3 class="text-bold">Nombre del padre o tutor</h3>
+        <p>ID: T00000</p>
+    </ion-item>
+    <ion-item text-center text-wrap class="no-margin ph-40">
+      <button ion-button round class="padding-15" (click)="datosEstudiante()">Editar perfil</button>
+      <p class="fs-10 mb-20">Actualice sus datos para que los centros educativos obtengan una mejor referencia sobre usted.</p>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-list>
+    <ion-list-header color="mediumLight" text-wrap>
+      <div class="portal">
+        <img src="./assets/icons/centroseducativos.png" alt="centros educativos">
+        <h3>Centros educativos</h3>
+        <p>Estos son los centros educativos donde tiene inscritos sus hijos.</p>
+      </div>
+    </ion-list-header>
+
+    <ion-list-header class="no-margin ph-10">
+      <ion-badge class="custom-badge">LISTADO</ion-badge>
+    </ion-list-header>
+    <ion-item *ngFor="let centro of centrosEducativos">
+      <ion-thumbnail item-start class="custom-thumbnail no-margin">
+        <img src="./assets/icons/centroeducativo.png" alt="centros educativos" width="60" height="60">
+      </ion-thumbnail>
+      <h3>{{ centro.nombre }}</h3>
+      <p class="fs-12">ID: {{ centro.ID }}</p>
+      <p class="fs-12">Teléfono: {{ centro.telefono }}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
